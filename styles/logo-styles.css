@@ -1,0 +1,16 @@
+:root {
+    --dokka-logo-image-url: url('../images/logo-gopro-almost-white-2025.svg');
+    --dokka-logo-height: 75px;
+    --dokka-logo-width: 200px;
+}
+
+/* Dokka - Link custom rules styles */
+.library-name--link {
+  /* ... */
+}
+
+/* Dokka - Logo custom rules styles */
+.library-name--link::before {
+  background-position: left;
+  width: 85px;
+}

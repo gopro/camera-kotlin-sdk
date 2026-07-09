@@ -1,0 +1,456 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>CameraCaptureState</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer></script></head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+<a class="library-name--link" href="../../../index.html" tabindex="1">
+                    GoPro Connect SDK
+            </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true" data-filter=":connect-sdk-api-external/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":connect-sdk-api-external/commonMain" data-filter=":connect-sdk-api-external/commonMain">
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button" type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config="{&quot;defaultSize&quot;: 280, &quot;minSize&quot;: 200, &quot;maxSize&quot;: 400}">
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    GoPro Connect SDK
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="GoPro Connect SDK::com.gopro.connect.api.model/CameraCaptureState///PointingToDeclaration//-1019086945">
+  <div class="breadcrumbs"><a href="../../index.html">GoPro Connect SDK</a><span class="delimiter">/</span><a href="../index.html">com.gopro.connect.api.model</a><span class="delimiter">/</span><span class="current">CameraCaptureState</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Camera</span><wbr><span>Capture</span><wbr><span><span>State</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">CameraCaptureState</a></div><p class="paragraph">Read-only capture and recording state surface for a connected camera.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="PROPERTY">
+        <h2 class="tableheader">Properties</h2>
+        <div class="table"><a data-name="-267069160%2FProperties%2F-1019086945" anchor-label="hiLightCount" id="-267069160%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hi-light-count.html"><span>hi</span><wbr><span>Light</span><wbr><span><span>Count</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-267069160%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="hi-light-count.html">hiLightCount</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Number of HiLight tags in the current capture session.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="947237188%2FProperties%2F-1019086945" anchor-label="intervalCaptureCount" id="947237188%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="interval-capture-count.html"><span>interval</span><wbr><span>Capture</span><wbr><span><span>Count</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="947237188%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="interval-capture-count.html">intervalCaptureCount</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Long///PointingToDeclaration/">Long</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Number of intervals captured in the current interval session.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="826867402%2FProperties%2F-1019086945" anchor-label="isCameraBusy" id="826867402%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-camera-busy.html"><span>is</span><wbr><span>Camera</span><wbr><span><span>Busy</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="826867402%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="is-camera-busy.html">isCameraBusy</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Whether the camera is busy with a capture or system operation.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1503229923%2FProperties%2F-1019086945" anchor-label="isCameraSystemReady" id="1503229923%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-camera-system-ready.html"><span>is</span><wbr><span>Camera</span><wbr><span>System</span><wbr><span><span>Ready</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1503229923%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="is-camera-system-ready.html">isCameraSystemReady</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Whether the camera reports that the capture system is ready.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-963786753%2FProperties%2F-1019086945" anchor-label="isControlsAvailable" id="-963786753%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-controls-available.html"><span>is</span><wbr><span>Controls</span><wbr><span><span>Available</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-963786753%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="is-controls-available.html">isControlsAvailable</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Whether general camera controls are currently available.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="111938446%2FProperties%2F-1019086945" anchor-label="isCountdownTimerActive" id="111938446%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-countdown-timer-active.html"><span>is</span><wbr><span>Countdown</span><wbr><span>Timer</span><wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="111938446%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="is-countdown-timer-active.html">isCountdownTimerActive</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Whether a countdown timer is active before capture begins.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="267977523%2FProperties%2F-1019086945" anchor-label="isFileDeletionAvailable" id="267977523%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-file-deletion-available.html"><span>is</span><wbr><span>File</span><wbr><span>Deletion</span><wbr><span><span>Available</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="267977523%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="is-file-deletion-available.html">isFileDeletionAvailable</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Whether file deletion commands are currently available.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="108644436%2FProperties%2F-1019086945" anchor-label="isHiLightAvailable" id="108644436%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-hi-light-available.html"><span>is</span><wbr><span>Hi</span><wbr><span>Light</span><wbr><span><span>Available</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="108644436%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="is-hi-light-available.html">isHiLightAvailable</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Whether adding a HiLight tag during capture is currently available.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="252110064%2FProperties%2F-1019086945" anchor-label="isHiLightDuringPlaybackAvailable" id="252110064%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-hi-light-during-playback-available.html"><span>is</span><wbr><span>Hi</span><wbr><span>Light</span><wbr><span>During</span><wbr><span>Playback</span><wbr><span><span>Available</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="252110064%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="is-hi-light-during-playback-available.html">isHiLightDuringPlaybackAvailable</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Whether adding a HiLight tag during playback is currently available.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-313267549%2FProperties%2F-1019086945" anchor-label="isMediaAvailable" id="-313267549%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-media-available.html"><span>is</span><wbr><span>Media</span><wbr><span><span>Available</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-313267549%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="is-media-available.html">isMediaAvailable</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Whether media-list commands are currently available.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-91936372%2FProperties%2F-1019086945" anchor-label="isPhotoHiLightAvailable" id="-91936372%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-photo-hi-light-available.html"><span>is</span><wbr><span>Photo</span><wbr><span>Hi</span><wbr><span>Light</span><wbr><span><span>Available</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-91936372%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="is-photo-hi-light-available.html">isPhotoHiLightAvailable</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Whether adding a HiLight tag for photo capture is currently available.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1377449088%2FProperties%2F-1019086945" anchor-label="isPresetModified" id="1377449088%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-preset-modified.html"><span>is</span><wbr><span>Preset</span><wbr><span><span>Modified</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1377449088%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="is-preset-modified.html">isPresetModified</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Whether the active preset differs from its stored settings.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1152620013%2FProperties%2F-1019086945" anchor-label="isReadyForCommand" id="1152620013%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-ready-for-command.html"><span>is</span><wbr><span>Ready</span><wbr><span>For</span><wbr><span><span>Command</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1152620013%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="is-ready-for-command.html">isReadyForCommand</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Whether the camera can accept a general command right now.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-284649044%2FProperties%2F-1019086945" anchor-label="isShutterAvailable" id="-284649044%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-shutter-available.html"><span>is</span><wbr><span>Shutter</span><wbr><span><span>Available</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-284649044%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="is-shutter-available.html">isShutterAvailable</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Whether shutter commands are currently available.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1406198490%2FProperties%2F-1019086945" anchor-label="isShutterOn" id="-1406198490%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-shutter-on.html"><span>is</span><wbr><span>Shutter</span><wbr><span><span>On</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1406198490%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="is-shutter-on.html">isShutterOn</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Whether the shutter is currently open.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-271171053%2FProperties%2F-1019086945" anchor-label="isSpeedRampActive" id="-271171053%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-speed-ramp-active.html"><span>is</span><wbr><span>Speed</span><wbr><span>Ramp</span><wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-271171053%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="is-speed-ramp-active.html">isSpeedRampActive</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Whether TimeWarp speed ramp is currently active.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-592965563%2FProperties%2F-1019086945" anchor-label="isVideoModeEnabled" id="-592965563%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-video-mode-enabled.html"><span>is</span><wbr><span>Video</span><wbr><span>Mode</span><wbr><span><span>Enabled</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-592965563%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="is-video-mode-enabled.html">isVideoModeEnabled</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Whether the active capture mode is video-like.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1396861231%2FProperties%2F-1019086945" anchor-label="isZoomActive" id="1396861231%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-zoom-active.html"><span>is</span><wbr><span>Zoom</span><wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1396861231%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="is-zoom-active.html">isZoomActive</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Whether zoom is currently active.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1825664657%2FProperties%2F-1019086945" anchor-label="isZoomWhileEncodingAllowed" id="1825664657%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-zoom-while-encoding-allowed.html"><span>is</span><wbr><span>Zoom</span><wbr><span>While</span><wbr><span>Encoding</span><wbr><span><span>Allowed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1825664657%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="is-zoom-while-encoding-allowed.html">isZoomWhileEncodingAllowed</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Whether zoom changes are allowed while the camera is encoding.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="825923508%2FProperties%2F-1019086945" anchor-label="multiShotCountdown" id="825923508%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="multi-shot-countdown.html"><span>multi</span><wbr><span>Shot</span><wbr><span><span>Countdown</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="825923508%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="multi-shot-countdown.html">multiShotCountdown</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Current countdown value for multi-shot captures.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1259012370%2FProperties%2F-1019086945" anchor-label="playbackPosition" id="-1259012370%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="playback-position.html"><span>playback</span><wbr><span><span>Position</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1259012370%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="playback-position.html">playbackPosition</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Current playback position in seconds when playback is active.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1936624649%2FProperties%2F-1019086945" anchor-label="zoomLevel" id="-1936624649%2FProperties%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="zoom-level.html"><span>zoom</span><wbr><span><span>Level</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1936624649%2FProperties%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="zoom-level.html">zoomLevel</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Current zoom level reported by the camera.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© GoPro, Inc. 2025</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,551 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>com.gopro.connect.api.usecase</title>
+<link href="../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer></script></head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+<a class="library-name--link" href="../../index.html" tabindex="1">
+                    GoPro Connect SDK
+            </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":connect-sdk-api-external/androidMain">android</button>
+                <button class="platform-tag platform-selector native-like" data-active="" aria-pressed="true" data-filter=":connect-sdk-api-external/appleMain">apple</button>
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true" data-filter=":connect-sdk-api-external/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":connect-sdk-api-external/androidMain" data-filter=":connect-sdk-api-external/androidMain">
+                                <span class="checkbox--icon"></span>
+                                android
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option native-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":connect-sdk-api-external/appleMain" data-filter=":connect-sdk-api-external/appleMain">
+                                <span class="checkbox--icon"></span>
+                                apple
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":connect-sdk-api-external/commonMain" data-filter=":connect-sdk-api-external/commonMain">
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button" type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config="{&quot;defaultSize&quot;: 280, &quot;minSize&quot;: 200, &quot;maxSize&quot;: 400}">
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    GoPro Connect SDK
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="package" id="content" pageids="GoPro Connect SDK::com.gopro.connect.api.usecase////PointingToDeclaration//-269657449">
+  <div class="breadcrumbs"><a href="../index.html">GoPro Connect SDK</a><span class="delimiter">/</span><span class="current">com.gopro.connect.api.usecase</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+    <div class="platform-hinted UnderCoverText with-platform-tabs" data-platform-hinted="data-platform-hinted">
+      <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":connect-sdk-api-external/androidMain" data-filterable-set=":connect-sdk-api-external/androidMain" data-active="" data-toggle=":connect-sdk-api-external/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":connect-sdk-api-external/appleMain" data-filterable-set=":connect-sdk-api-external/appleMain" data-toggle=":connect-sdk-api-external/appleMain">apple</button><button class="platform-bookmark" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain" data-toggle=":connect-sdk-api-external/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":connect-sdk-api-external/androidMain"></div><div class="content sourceset-dependent-content" data-togglable=":connect-sdk-api-external/appleMain"></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><p class="paragraph">Use case classes for camera operations. Common entry points include <a href="-start-scanning-for-devices-use-case/index.html">StartScanningForDevicesUseCase</a>, <a href="-get-camera-devices-use-case/index.html">GetCameraDevicesUseCase</a>, and <a href="-connect-to-device-use-case/index.html">ConnectToDeviceUseCase</a>. Each use case is constructed with a <a href="../com.gopro.connect.api.model/-connector/index.html">Connector</a> when needed and invoked via <code class="lang-kotlin">operator fun invoke(...)</code>.</p></div>    </div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="tableheader">Types</h2>
+        <div class="table"><a data-name="909765447%2FClasslikes%2F-1518318460" anchor-label="CameraDeviceCreatePreviewStreamConfigUseCase" id="909765447%2FClasslikes%2F-1518318460" data-filterable-set=":connect-sdk-api-external/appleMain,:connect-sdk-api-external/androidMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/appleMain,:connect-sdk-api-external/androidMain" data-filterable-set=":connect-sdk-api-external/appleMain,:connect-sdk-api-external/androidMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../connect-sdk-api-external/com.gopro.connect.api.usecase/[apple]-camera-device-create-preview-stream-config-use-case/index.html"><span>Camera</span><wbr><span>Device</span><wbr><span>Create</span><wbr><span>Preview</span><wbr><span>Stream</span><wbr><span>Config</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="909765447%2FClasslikes%2F-1518318460"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":connect-sdk-api-external/androidMain" data-filterable-set=":connect-sdk-api-external/androidMain" data-active="" data-toggle=":connect-sdk-api-external/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":connect-sdk-api-external/appleMain" data-filterable-set=":connect-sdk-api-external/appleMain" data-toggle=":connect-sdk-api-external/appleMain">apple</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/androidMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="[android]-camera-device-create-preview-stream-config-use-case/index.html">CameraDeviceCreatePreviewStreamConfigUseCase</a></div><div class="brief "><p class="paragraph">Creates a <a href="../com.gopro.connect.api.model/[android]-preview-stream-config/index.html">PreviewStreamConfig</a> for a camera's preview stream.</p></div></div><div class="content sourceset-dependent-content" data-togglable=":connect-sdk-api-external/appleMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="[apple]-camera-device-create-preview-stream-config-use-case/index.html">CameraDeviceCreatePreviewStreamConfigUseCase</a></div><div class="brief "><p class="paragraph">Creates an iOS <a href="../com.gopro.connect.api.model/[apple]-preview-stream-config/index.html">PreviewStreamConfig</a> that binds the GoPro preview stream to a hosting view.</p></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1759313490%2FClasslikes%2F-1019086945" anchor-label="CameraDeviceDeleteMediaUseCase" id="1759313490%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-camera-device-delete-media-use-case/index.html"><span>Camera</span><wbr><span>Device</span><wbr><span>Delete</span><wbr><span>Media</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1759313490%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-camera-device-delete-media-use-case/index.html">CameraDeviceDeleteMediaUseCase</a></div><div class="brief "><p class="paragraph">Deletes a media file from a connected camera.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="7236445%2FClasslikes%2F-1019086945" anchor-label="CameraDeviceDownloadThumbnailUseCase" id="7236445%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-camera-device-download-thumbnail-use-case/index.html"><span>Camera</span><wbr><span>Device</span><wbr><span>Download</span><wbr><span>Thumbnail</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="7236445%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-camera-device-download-thumbnail-use-case/index.html">CameraDeviceDownloadThumbnailUseCase</a></div><div class="brief "><p class="paragraph">Downloads a thumbnail image for a media file on a connected camera.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="36001811%2FClasslikes%2F-1019086945" anchor-label="CameraDeviceFormatSdCardUseCase" id="36001811%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-camera-device-format-sd-card-use-case/index.html"><span>Camera</span><wbr><span>Device</span><wbr><span>Format</span><wbr><span>Sd</span><wbr><span>Card</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="36001811%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-camera-device-format-sd-card-use-case/index.html">CameraDeviceFormatSdCardUseCase</a></div><div class="brief "><p class="paragraph">Formats the SD card in a connected camera.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="549338213%2FClasslikes%2F-1019086945" anchor-label="CameraDeviceGetMediaFileStreamUseCase" id="549338213%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-camera-device-get-media-file-stream-use-case/index.html"><span>Camera</span><wbr><span>Device</span><wbr><span>Get</span><wbr><span>Media</span><wbr><span>File</span><wbr><span>Stream</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="549338213%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-camera-device-get-media-file-stream-use-case/index.html">CameraDeviceGetMediaFileStreamUseCase</a></div><div class="brief "><p class="paragraph">Opens a stream for a media file on a connected camera.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="754120683%2FClasslikes%2F-1019086945" anchor-label="CameraDeviceGetMediaItemMetadataUseCase" id="754120683%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-camera-device-get-media-item-metadata-use-case/index.html"><span>Camera</span><wbr><span>Device</span><wbr><span>Get</span><wbr><span>Media</span><wbr><span>Item</span><wbr><span>Metadata</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="754120683%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-camera-device-get-media-item-metadata-use-case/index.html">CameraDeviceGetMediaItemMetadataUseCase</a></div><div class="brief "><p class="paragraph">Retrieves detailed metadata for a specific media file on a camera.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1586675673%2FClasslikes%2F-1019086945" anchor-label="CameraDeviceGetMediaListUseCase" id="-1586675673%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-camera-device-get-media-list-use-case/index.html"><span>Camera</span><wbr><span>Device</span><wbr><span>Get</span><wbr><span>Media</span><wbr><span>List</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1586675673%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-camera-device-get-media-list-use-case/index.html">CameraDeviceGetMediaListUseCase</a></div><div class="brief "><p class="paragraph">Retrieves the media list for a connected camera.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2101455602%2FClasslikes%2F-1019086945" anchor-label="CameraDeviceGetSettingsUseCase" id="2101455602%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-camera-device-get-settings-use-case/index.html"><span>Camera</span><wbr><span>Device</span><wbr><span>Get</span><wbr><span>Settings</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2101455602%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-camera-device-get-settings-use-case/index.html">CameraDeviceGetSettingsUseCase</a></div><div class="brief "><p class="paragraph">Observes the typed camera settings for a connected camera.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1206958704%2FClasslikes%2F-1019086945" anchor-label="CameraDeviceObserveCameraModeCatalogUseCase" id="-1206958704%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-camera-device-observe-camera-mode-catalog-use-case/index.html"><span>Camera</span><wbr><span>Device</span><wbr><span>Observe</span><wbr><span>Camera</span><wbr><span>Mode</span><wbr><span>Catalog</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1206958704%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-camera-device-observe-camera-mode-catalog-use-case/index.html">CameraDeviceObserveCameraModeCatalogUseCase</a></div><div class="brief "><p class="paragraph">Observes the camera's public mode and submode catalog.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1595712608%2FClasslikes%2F-1019086945" anchor-label="CameraDevicePowerDownUseCase" id="1595712608%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-camera-device-power-down-use-case/index.html"><span>Camera</span><wbr><span>Device</span><wbr><span>Power</span><wbr><span>Down</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1595712608%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-camera-device-power-down-use-case/index.html">CameraDevicePowerDownUseCase</a></div><div class="brief "><p class="paragraph">Powers down a connected camera.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2093058765%2FClasslikes%2F-1019086945" anchor-label="CameraDeviceRemoveCameraSubmodeUseCase" id="-2093058765%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-camera-device-remove-camera-submode-use-case/index.html"><span>Camera</span><wbr><span>Device</span><wbr><span>Remove</span><wbr><span>Camera</span><wbr><span>Submode</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2093058765%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-camera-device-remove-camera-submode-use-case/index.html">CameraDeviceRemoveCameraSubmodeUseCase</a></div><div class="brief "><p class="paragraph">Removes a user-created camera submode.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-354782295%2FClasslikes%2F-1019086945" anchor-label="CameraDeviceReorderCameraSubmodesUseCase" id="-354782295%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-camera-device-reorder-camera-submodes-use-case/index.html"><span>Camera</span><wbr><span>Device</span><wbr><span>Reorder</span><wbr><span>Camera</span><wbr><span>Submodes</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-354782295%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-camera-device-reorder-camera-submodes-use-case/index.html">CameraDeviceReorderCameraSubmodesUseCase</a></div><div class="brief "><p class="paragraph">Reorders camera submodes.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-315070614%2FClasslikes%2F-1019086945" anchor-label="CameraDeviceResetCameraSubmodeUseCase" id="-315070614%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-camera-device-reset-camera-submode-use-case/index.html"><span>Camera</span><wbr><span>Device</span><wbr><span>Reset</span><wbr><span>Camera</span><wbr><span>Submode</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-315070614%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-camera-device-reset-camera-submode-use-case/index.html">CameraDeviceResetCameraSubmodeUseCase</a></div><div class="brief "><p class="paragraph">Resets a factory camera submode to its default settings.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1297731521%2FClasslikes%2F-1019086945" anchor-label="CameraDeviceSelectCameraModeUseCase" id="-1297731521%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-camera-device-select-camera-mode-use-case/index.html"><span>Camera</span><wbr><span>Device</span><wbr><span>Select</span><wbr><span>Camera</span><wbr><span>Mode</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1297731521%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-camera-device-select-camera-mode-use-case/index.html">CameraDeviceSelectCameraModeUseCase</a></div><div class="brief "><p class="paragraph">Selects a top-level camera mode.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1421468741%2FClasslikes%2F-1019086945" anchor-label="CameraDeviceSelectCameraSubmodeUseCase" id="-1421468741%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-camera-device-select-camera-submode-use-case/index.html"><span>Camera</span><wbr><span>Device</span><wbr><span>Select</span><wbr><span>Camera</span><wbr><span>Submode</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1421468741%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-camera-device-select-camera-submode-use-case/index.html">CameraDeviceSelectCameraSubmodeUseCase</a></div><div class="brief "><p class="paragraph">Selects a concrete camera submode.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-232589719%2FClasslikes%2F-1019086945" anchor-label="CameraDeviceSetCameraSubmodeVisibilityUseCase" id="-232589719%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-camera-device-set-camera-submode-visibility-use-case/index.html"><span>Camera</span><wbr><span>Device</span><wbr><span>Set</span><wbr><span>Camera</span><wbr><span>Submode</span><wbr><span>Visibility</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-232589719%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-camera-device-set-camera-submode-visibility-use-case/index.html">CameraDeviceSetCameraSubmodeVisibilityUseCase</a></div><div class="brief "><p class="paragraph">Updates whether a camera submode appears in the camera UI.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1250508791%2FClasslikes%2F-1019086945" anchor-label="CameraDeviceSetSettingUseCase" id="-1250508791%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-camera-device-set-setting-use-case/index.html"><span>Camera</span><wbr><span>Device</span><wbr><span>Set</span><wbr><span>Setting</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1250508791%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-camera-device-set-setting-use-case/index.html">CameraDeviceSetSettingUseCase</a></div><div class="brief "><p class="paragraph">Applies a typed semantic setting option to a connected camera.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1331251521%2FClasslikes%2F-1019086945" anchor-label="CameraDeviceStartPreviewUseCase" id="1331251521%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-camera-device-start-preview-use-case/index.html"><span>Camera</span><wbr><span>Device</span><wbr><span>Start</span><wbr><span>Preview</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1331251521%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-camera-device-start-preview-use-case/index.html">CameraDeviceStartPreviewUseCase</a></div><div class="brief "><p class="paragraph">Starts camera preview streaming for a connected camera.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-972092737%2FClasslikes%2F-1019086945" anchor-label="CameraDeviceStopPreviewUseCase" id="-972092737%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-camera-device-stop-preview-use-case/index.html"><span>Camera</span><wbr><span>Device</span><wbr><span>Stop</span><wbr><span>Preview</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-972092737%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-camera-device-stop-preview-use-case/index.html">CameraDeviceStopPreviewUseCase</a></div><div class="brief "><p class="paragraph">Stops active camera preview streaming for a connected camera.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="635828207%2FClasslikes%2F-1019086945" anchor-label="ConnectToDeviceUseCase" id="635828207%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-connect-to-device-use-case/index.html"><span>Connect</span><wbr><span>To</span><wbr><span>Device</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="635828207%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-connect-to-device-use-case/index.html">ConnectToDeviceUseCase</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">connector<span class="token operator">: </span><a href="../com.gopro.connect.api.model/-connector/index.html">Connector</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Initiates a connection to a discovered camera device.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-130255332%2FClasslikes%2F-1019086945" anchor-label="DisconnectFromDeviceUseCase" id="-130255332%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-disconnect-from-device-use-case/index.html"><span>Disconnect</span><wbr><span>From</span><wbr><span>Device</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-130255332%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-disconnect-from-device-use-case/index.html">DisconnectFromDeviceUseCase</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">connector<span class="token operator">: </span><a href="../com.gopro.connect.api.model/-connector/index.html">Connector</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Disconnects from a connected camera device.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1156792574%2FClasslikes%2F-1019086945" anchor-label="GetCameraDevicesUseCase" id="-1156792574%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-get-camera-devices-use-case/index.html"><span>Get</span><wbr><span>Camera</span><wbr><span>Devices</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1156792574%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-get-camera-devices-use-case/index.html">GetCameraDevicesUseCase</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">connector<span class="token operator">: </span><a href="../com.gopro.connect.api.model/-connector/index.html">Connector</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Returns the list of discovered camera devices as a <span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-439336086%2FClasslikes%2F-1019086945" anchor-label="GetScanningStateUseCase" id="-439336086%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-get-scanning-state-use-case/index.html"><span>Get</span><wbr><span>Scanning</span><wbr><span>State</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-439336086%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-get-scanning-state-use-case/index.html">GetScanningStateUseCase</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">connector<span class="token operator">: </span><a href="../com.gopro.connect.api.model/-connector/index.html">Connector</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Observes the current device scanning state.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1690950127%2FClasslikes%2F-1019086945" anchor-label="StartRecordingUseCase" id="1690950127%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-start-recording-use-case/index.html"><span>Start</span><wbr><span>Recording</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1690950127%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-start-recording-use-case/index.html">StartRecordingUseCase</a></div><div class="brief "><p class="paragraph">Starts recording on the specified camera.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1259563621%2FClasslikes%2F-1019086945" anchor-label="StartScanningForDevicesUseCase" id="-1259563621%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-start-scanning-for-devices-use-case/index.html"><span>Start</span><wbr><span>Scanning</span><wbr><span>For</span><wbr><span>Devices</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1259563621%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-start-scanning-for-devices-use-case/index.html">StartScanningForDevicesUseCase</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">connector<span class="token operator">: </span><a href="../com.gopro.connect.api.model/-connector/index.html">Connector</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Starts camera discovery for nearby GoPro devices.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1769196227%2FClasslikes%2F-1019086945" anchor-label="StopRecordingUseCase" id="1769196227%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-stop-recording-use-case/index.html"><span>Stop</span><wbr><span>Recording</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1769196227%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-stop-recording-use-case/index.html">StopRecordingUseCase</a></div><div class="brief "><p class="paragraph">Stops recording on the specified camera.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="88232775%2FClasslikes%2F-1019086945" anchor-label="StopScanningForDevicesUseCase" id="88232775%2FClasslikes%2F-1019086945" data-filterable-set=":connect-sdk-api-external/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":connect-sdk-api-external/commonMain" data-filterable-set=":connect-sdk-api-external/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-stop-scanning-for-devices-use-case/index.html"><span>Stop</span><wbr><span>Scanning</span><wbr><span>For</span><wbr><span>Devices</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="88232775%2FClasslikes%2F-1019086945"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":connect-sdk-api-external/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-stop-scanning-for-devices-use-case/index.html">StopScanningForDevicesUseCase</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">connector<span class="token operator">: </span><a href="../com.gopro.connect.api.model/-connector/index.html">Connector</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Stops active camera discovery.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© GoPro, Inc. 2025</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

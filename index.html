@@ -1,7 +1,234 @@
 <!DOCTYPE html>
-<html lang="en">
-<head><meta charset="UTF-8"><title>GoPro SDK Docs</title>
-<style>body{font-family:sans-serif;margin:40px;color:#1a1a1a}</style></head>
-<body><h1>GoPro SDK Documentation</h1>
-<p>Documentation is being generated and will appear here shortly.</p>
-</body></html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>All modules</title>
+    <link href="images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="scripts/sourceset_dependencies.js" async="async"></script>
+<link href="styles/style.css" rel="Stylesheet">
+<link href="styles/main.css" rel="Stylesheet">
+<link href="styles/prism.css" rel="Stylesheet">
+<link href="styles/logo-styles.css" rel="Stylesheet">
+<link href="ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="ui-kit/ui-kit.min.js" defer="defer"></script>
+<link href="images/logo-gopro-almost-white-2025.svg">
+<link href="styles/logo-styles.css" rel="Stylesheet">
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="index.html" tabindex="1">
+                    GoPro Connect SDK
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+        </div>
+        <div class="navigation-controls">
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    GoPro Connect SDK
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" id="content" pageIds="GoPro Connect SDK::.ext/allModules///PointingToDeclaration//0">
+  <div class="breadcrumbs"></div>
+  <div class="cover ">
+    <div class="cover ">
+      <h1 class="">GoPro Connect Kotlin Multiplatform SDK</h1>
+      <p class="paragraph">The GoPro Connect SDK provides a Kotlin Multiplatform API for discovering cameras, connecting, observing live camera state, controlling capture, and retrieving media.</p>
+      <p class="paragraph">This documentation covers the SDK API reference and the shared model types used throughout the SDK.</p>
+      <h2 class="">1. Introduction</h2>
+      <p class="paragraph">The SDK is organized around:</p>
+      <ul>
+        <li>
+          <p class="paragraph"><code class="lang-kotlin">ConnectSdk</code> as the entry point</p>
+        </li>
+        <li>
+          <p class="paragraph"><code class="lang-kotlin">Connector</code> as the shared operation handle</p>
+        </li>
+        <li>
+          <p class="paragraph"><code class="lang-kotlin">CameraDevice</code> as the camera representation used throughout the SDK</p>
+        </li>
+        <li>
+          <p class="paragraph">Use case classes in <code class="lang-kotlin">com.gopro.connect.api.usecase</code> for camera operations</p>
+        </li>
+      </ul>
+      <p class="paragraph">Platform support is provided via KMP targets (Android and Apple).</p>
+      <h2 class="">2. Setup</h2>
+      <p class="paragraph">Initialize the SDK once at app startup, then obtain a shared <code class="lang-kotlin">Connector</code>. The <code class="lang-kotlin">clientKey</code> passed to setup is required and must be at least 16 characters long.</p>
+      <h3 class="">Android</h3>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">import android.app.Application<br>import com.gopro.connect.api.ConnectSdk<br>import com.gopro.connect.api.model.Connector<br><br>class MyApp : Application() {<br>    lateinit var connector: Connector<br><br>    override fun onCreate() {<br>        super.onCreate()<br>        ConnectSdk.setup(this, &quot;sample-client-key&quot;)<br>        connector = ConnectSdk.connector()<br>    }<br>}</code></pre>
+<span class="copy-tooltip">
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+<span class="copy-icon"></span></span></div>
+      <h3 class="">Apple</h3>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">import com.gopro.connect.api.ConnectSdk<br><br>fun setupSdk() {<br>    ConnectSdk.setup(clientKey = &quot;sample-client-key&quot;)<br>    val connector = ConnectSdk.connector()<br>}</code></pre>
+<span class="copy-tooltip">
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+<span class="copy-icon"></span></span></div>
+      <p class="paragraph">If your Apple app uses camera Wi-Fi features such as live preview or local camera HTTP traffic, enable the <code class="lang-kotlin">Hotspot Configuration</code> and <code class="lang-kotlin">Access Wi-Fi Information</code> capabilities when needed, and add <code class="lang-kotlin">NSAllowsLocalNetworking</code> under <code class="lang-kotlin">NSAppTransportSecurity</code> in your app's <code class="lang-kotlin">Info.plist</code>.</p>
+      <h2 class="">3. Scanning for Devices</h2>
+      <p class="paragraph">Use <code class="lang-kotlin">StartScanningForDevicesUseCase</code> to begin discovery and <code class="lang-kotlin">GetScanningStateUseCase</code> to observe <code class="lang-kotlin">ScanState</code>.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">import com.gopro.connect.api.model.ScanState<br>import com.gopro.connect.api.usecase.GetScanningStateUseCase<br>import com.gopro.connect.api.usecase.StartScanningForDevicesUseCase<br>import kotlinx.coroutines.CoroutineScope<br>import kotlinx.coroutines.launch<br><br>fun startScanning(scope: CoroutineScope, connector: com.gopro.connect.api.model.Connector) {<br>    val startScan = StartScanningForDevicesUseCase(connector)<br>    val scanState = GetScanningStateUseCase(connector)<br><br>    startScan()<br><br>    scope.launch {<br>        scanState().collect { state -&gt;<br>            when (state) {<br>                ScanState.Idle -&gt; Unit<br>                ScanState.Scanning -&gt; Unit<br>                is ScanState.Error -&gt; {<br>                    // state.reason is ScanError<br>                }<br>            }<br>        }<br>    }<br>}</code></pre>
+<span class="copy-tooltip">
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+<span class="copy-icon"></span></span></div>
+      <h2 class="">4. Connecting to a Camera</h2>
+      <p class="paragraph">Retrieve devices with <code class="lang-kotlin">GetCameraDevicesUseCase</code>, then connect with <code class="lang-kotlin">ConnectToDeviceUseCase</code>. Connection updates are exposed via each device's <code class="lang-kotlin">DeviceConnectionStatus</code> streams. If you no longer want a camera to participate in remembered reconnect flows, call <code class="lang-kotlin">connector.forgetDevice(device)</code>.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">import com.gopro.connect.api.model.NetworkType<br>import com.gopro.connect.api.usecase.ConnectToDeviceUseCase<br>import com.gopro.connect.api.usecase.GetCameraDevicesUseCase<br>import kotlinx.coroutines.CoroutineScope<br>import kotlinx.coroutines.launch<br><br>fun connectFirstDevice(scope: CoroutineScope, connector: com.gopro.connect.api.model.Connector) {<br>    val getDevices = GetCameraDevicesUseCase(connector)<br>    val connectToDevice = ConnectToDeviceUseCase(connector)<br><br>    scope.launch {<br>        getDevices().collect { devices -&gt;<br>            val device = devices.firstOrNull() ?: return@collect<br><br>            val connected = connectToDevice(<br>                device = device,<br>                connectionTypes = listOf(NetworkType.BLE, NetworkType.WIFI),<br>                rememberDevice = true,<br>            )<br><br>            if (connected) {<br>                // Observe primary connection lifecycle<br>                scope.launch {<br>                    device.primaryConnectionStatus.collect { status -&gt;<br>                        // status is DeviceConnectionStatus<br>                    }<br>                }<br>            }<br>        }<br>    }<br>}</code></pre>
+<span class="copy-tooltip">
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+<span class="copy-icon"></span></span></div>
+      <h2 class="">5. Reading Camera State</h2>
+      <p class="paragraph"><code class="lang-kotlin">CameraDevice</code> exposes state surfaces that update over time:</p>
+      <ul>
+        <li>
+          <p class="paragraph"><code class="lang-kotlin">CameraBatteryState</code></p>
+        </li>
+        <li>
+          <p class="paragraph"><code class="lang-kotlin">CameraCaptureState</code></p>
+        </li>
+        <li>
+          <p class="paragraph"><code class="lang-kotlin">CameraStorageState</code></p>
+        </li>
+        <li>
+          <p class="paragraph"><code class="lang-kotlin">CameraConnectivityState</code></p>
+        </li>
+        <li>
+          <p class="paragraph"><code class="lang-kotlin">CameraDeviceInfo</code></p>
+        </li>
+        <li>
+          <p class="paragraph"><code class="lang-kotlin">CameraSystemState</code></p>
+        </li>
+        <li>
+          <p class="paragraph"><code class="lang-kotlin">CameraStreamState</code></p>
+        </li>
+      </ul>
+      <p class="paragraph"><code class="lang-kotlin">CameraDevice</code> also implements the shared <code class="lang-kotlin">Device</code> contract, so identity and connection properties such as <code class="lang-kotlin">displayName</code>, <code class="lang-kotlin">model</code>, <code class="lang-kotlin">firmwareVersion</code>, <code class="lang-kotlin">primaryConnectionStatus</code>, <code class="lang-kotlin">connectionStatuses</code>, and <code class="lang-kotlin">isRemembered</code> are always available.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">import kotlinx.coroutines.CoroutineScope<br>import kotlinx.coroutines.launch<br><br>fun observeCameraState(scope: CoroutineScope, device: com.gopro.connect.api.model.CameraDevice) {<br>    device.deviceInfo?.let { info -&gt;<br>        scope.launch { info.name.collect { name -&gt; /* update title */ } }<br>    }<br><br>    device.batteryState?.let { battery -&gt;<br>        scope.launch { battery.batteryPercentage.collect { percent -&gt; /* 0..100 */ } }<br>    }<br><br>    device.captureState?.let { capture -&gt;<br>        scope.launch { capture.isShutterOn.collect { isRecording -&gt; /* update UI */ } }<br>    }<br><br>    device.storageState?.let { storage -&gt;<br>        scope.launch { storage.storagePercentage.collect { used -&gt; /* update UI */ } }<br>    }<br><br>    device.systemState?.let { system -&gt;<br>        scope.launch { system.isCameraReady.collect { ready -&gt; /* enable controls */ } }<br>    }<br><br>    device.streamState?.let { stream -&gt;<br>        scope.launch { stream.isPreviewAvailable.collect { available -&gt; /* enable preview */ } }<br>    }<br><br>    scope.launch {<br>        device.hasNewFootageAvailable.collect { hasNew -&gt; /* refresh gallery badge */ }<br>    }<br>}</code></pre>
+<span class="copy-tooltip">
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+<span class="copy-icon"></span></span></div>
+      <p class="paragraph">Additional per-camera properties are available directly from <code class="lang-kotlin">CameraDevice</code>, including <code class="lang-kotlin">ipAddress</code> for local camera traffic and <code class="lang-kotlin">settings</code> for a live stream of the camera's current settings.</p>
+      <h2 class="">6. Recording</h2>
+      <p class="paragraph">Use <code class="lang-kotlin">StartRecordingUseCase</code> and <code class="lang-kotlin">StopRecordingUseCase</code>. Both return <code class="lang-kotlin">DeviceCommandResult</code>.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">import com.gopro.connect.api.model.DeviceCommandResult<br>import com.gopro.connect.api.usecase.StartRecordingUseCase<br>import com.gopro.connect.api.usecase.StopRecordingUseCase<br><br>suspend fun toggleRecording(device: com.gopro.connect.api.model.CameraDevice) {<br>    val start = StartRecordingUseCase()<br>    val stop = StopRecordingUseCase()<br><br>    when (val result = start(device)) {<br>        is DeviceCommandResult.Success -&gt; {<br>            // later...<br>            stop(device)<br>        }<br>        is DeviceCommandResult.Failed -&gt; {<br>            // result.error may be null<br>        }<br>    }<br>}</code></pre>
+<span class="copy-tooltip">
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+<span class="copy-icon"></span></span></div>
+      <h2 class="">7. Media</h2>
+      <p class="paragraph">Use <code class="lang-kotlin">CameraDeviceGetMediaListUseCase</code> to list files, then retrieve metadata, stream files, download thumbnails, or delete media.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">import com.gopro.connect.api.model.DeviceCommandResult<br>import com.gopro.connect.api.model.ThumbnailSize<br>import com.gopro.connect.api.usecase.CameraDeviceDeleteMediaUseCase<br>import com.gopro.connect.api.usecase.CameraDeviceDownloadThumbnailUseCase<br>import com.gopro.connect.api.usecase.CameraDeviceGetMediaFileStreamUseCase<br>import com.gopro.connect.api.usecase.CameraDeviceGetMediaListUseCase<br>import com.gopro.connect.api.usecase.CameraDeviceGetMediaItemMetadataUseCase<br><br>suspend fun loadMedia(device: com.gopro.connect.api.model.CameraDevice) {<br>    val getMediaList = CameraDeviceGetMediaListUseCase()<br>    val downloadThumbnail = CameraDeviceDownloadThumbnailUseCase()<br>    val getMetadata = CameraDeviceGetMediaItemMetadataUseCase()<br>    val getFileStream = CameraDeviceGetMediaFileStreamUseCase()<br>    val deleteMedia = CameraDeviceDeleteMediaUseCase()<br><br>    val mediaResult = getMediaList(device)<br>    val firstMedia = when (mediaResult) {<br>        is DeviceCommandResult.Success -&gt; mediaResult.data.firstOrNull()<br>        is DeviceCommandResult.Failed -&gt; null<br>    } ?: return<br><br>    val thumbResult = downloadThumbnail(<br>        device = device,<br>        filePath = firstMedia.filePath,<br>        size = ThumbnailSize.SMALL,<br>    )<br><br>    when (thumbResult) {<br>        is DeviceCommandResult.Success -&gt; {<br>            val bytes = thumbResult.data<br>            // render thumbnail bytes<br>        }<br>        is DeviceCommandResult.Failed -&gt; {<br>            // thumbResult.error may be null<br>        }<br>    }<br><br>    getMetadata(device, firstMedia.filePath)<br>    getFileStream(device, firstMedia.filePath, highResolution = true)<br>    deleteMedia(device, firstMedia.filePath)<br>}</code></pre>
+<span class="copy-tooltip">
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+<span class="copy-icon"></span></span></div>
+      <h2 class="">8. Settings</h2>
+      <p class="paragraph">Use <code class="lang-kotlin">CameraDeviceGetSettingsUseCase</code> to observe available settings and <code class="lang-kotlin">CameraDeviceSetSettingUseCase</code> to apply updates. For capture-mode selection flows, use <code class="lang-kotlin">CameraDeviceGetCaptureModeCapabilitiesUseCase</code> to discover what the camera supports and <code class="lang-kotlin">CameraDeviceSetCaptureModeUseCase</code> to apply a new <code class="lang-kotlin">CaptureMode</code>.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">import com.gopro.connect.api.usecase.CameraDeviceGetSettingsUseCase<br>import com.gopro.connect.api.usecase.CameraDeviceSetSettingUseCase<br>import kotlinx.coroutines.CoroutineScope<br>import kotlinx.coroutines.launch<br><br>fun observeAndUpdateSettings(<br>    scope: CoroutineScope,<br>    device: com.gopro.connect.api.model.CameraDevice,<br>) {<br>    val getSettings = CameraDeviceGetSettingsUseCase()<br>    val setSetting = CameraDeviceSetSettingUseCase()<br><br>    scope.launch {<br>        getSettings(device).collect { descriptors -&gt;<br>            val setting = descriptors.firstOrNull() ?: return@collect<br>            val option = setting.options.firstOrNull() ?: return@collect<br>            setSetting(device, setting, option)<br>        }<br>    }<br>}</code></pre>
+<span class="copy-tooltip">
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+<span class="copy-icon"></span></span></div>
+      <h2 class="">9. Preview Streaming</h2>
+      <p class="paragraph">Use <code class="lang-kotlin">CameraDeviceStartPreviewUseCase</code> and <code class="lang-kotlin">CameraDeviceStopPreviewUseCase</code> to control preview streaming on a connected camera.</p>
+      <p class="paragraph">Preview rendering is platform-specific:</p>
+      <ul>
+        <li>
+          <p class="paragraph">On Android, <code class="lang-kotlin">CameraDeviceCreatePreviewStreamConfigUseCase</code> returns a <code class="lang-kotlin">PreviewStreamConfig</code>   containing the preview URI, Media3 extractors, and orientation/video-size flows.</p>
+        </li>
+        <li>
+          <p class="paragraph">On Apple, <code class="lang-kotlin">CameraDeviceCreatePreviewStreamConfigUseCase</code> binds the preview stream to a caller   supplied hosting view and returns a <code class="lang-kotlin">PreviewStreamConfig</code> that should be released when the   preview session ends.</p>
+        </li>
+      </ul>
+      <p class="paragraph"><code class="lang-kotlin">CameraStreamState</code> helps you decide when preview is supported and available before you start the preview workflow.</p>
+      <h2 class="">10. Device Management</h2>
+      <p class="paragraph">Use <code class="lang-kotlin">CameraDevicePowerDownUseCase</code> to power down a connected camera and <code class="lang-kotlin">CameraDeviceFormatSdCardUseCase</code> to format the SD card.</p>
+      <p class="paragraph">If your app supports reconnect preferences, use <code class="lang-kotlin">connector.forgetDevice(device)</code> to remove a camera from the remembered-device list after disconnecting.</p>
+    </div>
+    <h2 class="">All modules:</h2>
+    <div class="table"><a data-name="1170378244%2FMain%2F0" anchor-label="GoPro Connect SDK" id="1170378244%2FMain%2F0" data-filterable-set=""></a>
+      <div class="table-row table-row_multimodule">
+        <div class="main-subrow ">
+          <div class="w-100"><span class="inline-flex">
+              <div><a href="connect-sdk-api-external/index.html">GoPro Connect SDK</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1170378244%2FMain%2F0"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div><span class="brief-comment"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© GoPro, Inc. 2025</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
