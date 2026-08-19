@@ -1,16 +1,17 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
-$dokka.location:com.gopro.connect.api.model/PreviewStreamConfig///PointingToDeclaration/GoPro Connect SDK — 1.1.0/com.gopro.connect.api.model/[apple]-preview-stream-config/index.html
-$dokka.location:com.gopro.connect.api.model/PreviewStreamConfig/extractorsFactory/#/PointingToDeclaration/GoPro Connect SDK — 1.1.0/com.gopro.connect.api.model/[android]-preview-stream-config/extractors-factory.html
-$dokka.location:com.gopro.connect.api.model/PreviewStreamConfig/orientationFlow/#/PointingToDeclaration/GoPro Connect SDK — 1.1.0/com.gopro.connect.api.model/[apple]-preview-stream-config/orientation-flow.html
-$dokka.location:com.gopro.connect.api.model/PreviewStreamConfig/release/#/PointingToDeclaration/GoPro Connect SDK — 1.1.0/com.gopro.connect.api.model/[apple]-preview-stream-config/release.html
-$dokka.location:com.gopro.connect.api.model/PreviewStreamConfig/uri/#/PointingToDeclaration/GoPro Connect SDK — 1.1.0/com.gopro.connect.api.model/[apple]-preview-stream-config/uri.html
-$dokka.location:com.gopro.connect.api.model/PreviewStreamConfig/videoSizeFlow/#/PointingToDeclaration/GoPro Connect SDK — 1.1.0/com.gopro.connect.api.model/[apple]-preview-stream-config/video-size-flow.html
-$dokka.location:com.gopro.connect.api.usecase/CameraDeviceCreatePreviewStreamConfigUseCase///PointingToDeclaration/GoPro Connect SDK — 1.1.0/com.gopro.connect.api.usecase/[apple]-camera-device-create-preview-stream-config-use-case/index.html
-$dokka.location:com.gopro.connect.api.usecase/CameraDeviceCreatePreviewStreamConfigUseCase/CameraDeviceCreatePreviewStreamConfigUseCase/#/PointingToDeclaration/GoPro Connect SDK — 1.1.0/com.gopro.connect.api.usecase/[apple]-camera-device-create-preview-stream-config-use-case/-camera-device-create-preview-stream-config-use-case.html
-$dokka.location:com.gopro.connect.api.usecase/CameraDeviceCreatePreviewStreamConfigUseCase/invoke/#com.gopro.connect.api.model.CameraDevice#kotlinx.coroutines.CoroutineScope#platform.UIKit.UIView/PointingToDeclaration/GoPro Connect SDK — 1.1.0/com.gopro.connect.api.usecase/[apple]-camera-device-create-preview-stream-config-use-case/invoke.html
-$dokka.location:com.gopro.connect.api.usecase/CameraDeviceCreatePreviewStreamConfigUseCase/invoke/#kotlinx.coroutines.CoroutineScope/PointingToDeclaration/GoPro Connect SDK — 1.1.0/com.gopro.connect.api.usecase/[android]-camera-device-create-preview-stream-config-use-case/invoke.html
-module:GoPro Connect SDK — 1.1.0
+$dokka.location:com.gopro.connect.api.model/PreviewStreamConfig///PointingToDeclaration/GoPro Connect SDK/com.gopro.connect.api.model/[apple]-preview-stream-config/index.html
+$dokka.location:com.gopro.connect.api.model/PreviewStreamConfig/extractorsFactory/#/PointingToDeclaration/GoPro Connect SDK/com.gopro.connect.api.model/[android]-preview-stream-config/extractors-factory.html
+$dokka.location:com.gopro.connect.api.model/PreviewStreamConfig/orientationFlow/#/PointingToDeclaration/GoPro Connect SDK/com.gopro.connect.api.model/[apple]-preview-stream-config/orientation-flow.html
+$dokka.location:com.gopro.connect.api.model/PreviewStreamConfig/release/#/PointingToDeclaration/GoPro Connect SDK/com.gopro.connect.api.model/[apple]-preview-stream-config/release.html
+$dokka.location:com.gopro.connect.api.model/PreviewStreamConfig/uri/#/PointingToDeclaration/GoPro Connect SDK/com.gopro.connect.api.model/[apple]-preview-stream-config/uri.html
+$dokka.location:com.gopro.connect.api.model/PreviewStreamConfig/videoSizeFlow/#/PointingToDeclaration/GoPro Connect SDK/com.gopro.connect.api.model/[apple]-preview-stream-config/video-size-flow.html
+$dokka.location:com.gopro.connect.api.usecase/CameraDeviceCreatePreviewStreamConfigUseCase///PointingToDeclaration/GoPro Connect SDK/com.gopro.connect.api.usecase/[macos]-camera-device-create-preview-stream-config-use-case/index.html
+$dokka.location:com.gopro.connect.api.usecase/CameraDeviceCreatePreviewStreamConfigUseCase/CameraDeviceCreatePreviewStreamConfigUseCase/#/PointingToDeclaration/GoPro Connect SDK/com.gopro.connect.api.usecase/[macos]-camera-device-create-preview-stream-config-use-case/-camera-device-create-preview-stream-config-use-case.html
+$dokka.location:com.gopro.connect.api.usecase/CameraDeviceCreatePreviewStreamConfigUseCase/invoke/#com.gopro.connect.api.model.CameraDevice#kotlinx.coroutines.CoroutineScope#platform.AppKit.NSView/PointingToDeclaration/GoPro Connect SDK/com.gopro.connect.api.usecase/[macos]-camera-device-create-preview-stream-config-use-case/invoke.html
+$dokka.location:com.gopro.connect.api.usecase/CameraDeviceCreatePreviewStreamConfigUseCase/invoke/#com.gopro.connect.api.model.CameraDevice#kotlinx.coroutines.CoroutineScope#platform.UIKit.UIView/PointingToDeclaration/GoPro Connect SDK/com.gopro.connect.api.usecase/[ios]-camera-device-create-preview-stream-config-use-case/invoke.html
+$dokka.location:com.gopro.connect.api.usecase/CameraDeviceCreatePreviewStreamConfigUseCase/invoke/#kotlinx.coroutines.CoroutineScope/PointingToDeclaration/GoPro Connect SDK/com.gopro.connect.api.usecase/[android]-camera-device-create-preview-stream-config-use-case/invoke.html
+module:GoPro Connect SDK
 com.gopro.connect.api
 com.gopro.connect.api.model
 com.gopro.connect.api.usecase

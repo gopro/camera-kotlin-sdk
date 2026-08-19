@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>GoPro Connect SDK — 1.1.0</title>
+    <title>GoPro Connect SDK</title>
     <link href="images/logo-icon.svg" rel="icon" type="image/svg">
         <script>var pathToRoot = "";</script>
     <script>document.documentElement.classList.replace("no-js", "js");</script>
@@ -32,13 +32,14 @@
 <script type="text/javascript" src="scripts/prism.js" async="async"></script>
 <script type="text/javascript" src="ui-kit/ui-kit.min.js" defer="defer"></script>
 <link href="images/logo-gopro-almost-white-2025.svg">
+<link href="images/homepage.svg">
 <link href="styles/logo-styles.css" rel="Stylesheet">
 </head>
 <body>
 <div class="root">
     <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
             <a class="library-name--link" href="index.html" tabindex="1">
-                    GoPro Connect SDK — 1.1.0
+                    GoPro Connect SDK
             </a>
         <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
                 type="button">Toggle table of contents
@@ -47,6 +48,8 @@
         <div class="library-version" id="library-version">
         </div>
         <div class="navigation-controls">
+                <a class="navigation-controls--btn navigation-controls--btn_homepage" id="homepage-link"
+                   href="https://github.com/gopro/camera-kotlin-sdk"></a>
             <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
                     type="button">Switch theme
             </button>
@@ -63,7 +66,7 @@
                     data-role="dropdown-listbox" aria-label="Table of contents">
                     <div class="dropdown--header">
                             <span>
-                                    GoPro Connect SDK — 1.1.0
+                                    GoPro Connect SDK
                             </span>
                         <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
                             <i class="ui-kit-icon ui-kit-icon_cross"></i>
@@ -76,17 +79,27 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" id="content" pageIds="GoPro Connect SDK — 1.1.0::.ext/allModules///PointingToDeclaration//0">
+<div class="main-content" id="content" pageIds="GoPro Connect SDK::.ext/allModules///PointingToDeclaration//0">
   <div class="breadcrumbs"></div>
   <div class="cover ">
     <div class="cover ">
-      <h1 class="">GoPro Connect SDK — 1.1.0</h1>
+      <h1 class="">GoPro Connect SDK</h1>
       <p class="paragraph">The GoPro Connect SDK provides a Kotlin Multiplatform API for discovering cameras, connecting, observing live camera state, controlling capture, and retrieving media.</p>
       <p class="paragraph">This documentation covers the SDK API reference and the shared model types used throughout the SDK.</p>
       <blockquote class="quotation">
         <p class="paragraph"><strong>Ready to use it?</strong></p>
-        <p class="paragraph"><a href="TBD">Register and download the latest SDK</a> · <a href="https://gopro.github.io/camera-swift-sdk">GoPro Connect SDK for iOS</a></p>
+        <p class="paragraph"><a href="TBD">Register and download the latest SDK</a></p>
       </blockquote>
+      <h2 class="">See Also</h2>
+      <ul>
+        <li>
+          <p class="paragraph"><a href="https://gopro.github.io/camera-swift-sdk">GoPro Connect SDK for iOS</a></p>
+        </li>
+        <li>
+          <p class="paragraph"><a href="https://github.com/gopro/camera-kotlin-sdk">GitHub Repo</a></p>
+        </li>
+      </ul>
+      <p class="paragraph">This GoPro SDK Documentation is GoPro copyrighted material. © 2025-2026 GoPro, Inc. All rights reserved. Use of this documentation is subject to the <a href="https://github.com/gopro/camera-kotlin-sdk/blob/main/LICENSE">GoPro SDK Documentation License</a>.</p>
       <h2 class="">1. Introduction</h2>
       <p class="paragraph">The SDK is organized around:</p>
       <ul>
@@ -166,9 +179,9 @@
 <span class="copy-icon"></span></span></div>
       <p class="paragraph">Additional per-camera properties are available directly from <code class="lang-kotlin">CameraDevice</code>, including <code class="lang-kotlin">ipAddress</code> for local camera traffic and <code class="lang-kotlin">settings</code> for a live stream of the camera's current settings.</p>
       <h2 class="">6. Recording</h2>
-      <p class="paragraph">Use <code class="lang-kotlin">StartRecordingUseCase</code> and <code class="lang-kotlin">StopRecordingUseCase</code>. Both return <code class="lang-kotlin">DeviceCommandResult</code>.</p>
+      <p class="paragraph">Use <code class="lang-kotlin">CameraDeviceStartRecordingUseCase</code> and <code class="lang-kotlin">CameraDeviceStopRecordingUseCase</code>. Both return <code class="lang-kotlin">DeviceCommandResult</code>.</p>
       <div class="sample-container">
-        <pre><code class="block lang-kotlin" theme="idea">import com.gopro.connect.api.model.DeviceCommandResult<br>import com.gopro.connect.api.usecase.StartRecordingUseCase<br>import com.gopro.connect.api.usecase.StopRecordingUseCase<br><br>suspend fun toggleRecording(device: com.gopro.connect.api.model.CameraDevice) {<br>    val start = StartRecordingUseCase()<br>    val stop = StopRecordingUseCase()<br><br>    when (val result = start(device)) {<br>        is DeviceCommandResult.Success -&gt; {<br>            // later...<br>            stop(device)<br>        }<br>        is DeviceCommandResult.Failed -&gt; {<br>            // result.error may be null<br>        }<br>    }<br>}</code></pre>
+        <pre><code class="block lang-kotlin" theme="idea">import com.gopro.connect.api.model.CameraDevice<br>import com.gopro.connect.api.model.DeviceCommandResult<br>import com.gopro.connect.api.usecase.CameraDeviceStartRecordingUseCase<br>import com.gopro.connect.api.usecase.CameraDeviceStopRecordingUseCase<br><br>suspend fun toggleRecording(device: CameraDevice) {<br>    val start = CameraDeviceStartRecordingUseCase()<br>    val stop = CameraDeviceStopRecordingUseCase()<br><br>    when (val result = start(device)) {<br>        is DeviceCommandResult.Success -&gt; {<br>            // later...<br>            stop(device)<br>        }<br>        is DeviceCommandResult.Failed -&gt; {<br>            // result.error may be null<br>        }<br>    }<br>}</code></pre>
 <span class="copy-tooltip">
           <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
 <span class="copy-icon"></span></span></div>
@@ -203,12 +216,12 @@
       <p class="paragraph">If your app supports reconnect preferences, use <code class="lang-kotlin">connector.forgetDevice(device)</code> to remove a camera from the remembered-device list after disconnecting.</p>
     </div>
     <h2 class="">All modules:</h2>
-    <div class="table"><a data-name="613374714%2FMain%2F0" anchor-label="GoPro Connect SDK — 1.1.0" id="613374714%2FMain%2F0" data-filterable-set=""></a>
+    <div class="table"><a data-name="1170378244%2FMain%2F0" anchor-label="GoPro Connect SDK" id="1170378244%2FMain%2F0" data-filterable-set=""></a>
       <div class="table-row table-row_multimodule">
         <div class="main-subrow ">
           <div class="w-100"><span class="inline-flex">
-              <div><a href="connect-sdk-api-external/index.html">GoPro Connect SDK — 1.1.0</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="613374714%2FMain%2F0"></span>
+              <div><a href="connect-sdk-api-external/index.html">GoPro Connect SDK</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1170378244%2FMain%2F0"></span>
                 <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
               </span></span></div>
           <div><span class="brief-comment"></span></div>
@@ -226,7 +239,7 @@
                     <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
                         Dokka
                     </a>
-                    <div>© GoPro, Inc. 2025</div>
+                    <div>© 2025-2026 GoPro, Inc. All rights reserved. Use of this documentation is subject to the GoPro SDK Documentation License.</div>
                 </div>
             </div>
         </div>
