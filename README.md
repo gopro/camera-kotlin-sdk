@@ -59,4 +59,4 @@ Before filing, search [existing issues](../../issues) to avoid duplicates.
 ## Related SDKs
 
 > [!TIP]
-> See the [GoPro Connect SDK for iOS (Swift)](https://gopro.github.io/camera-swift-sdk)
+> See the [GoPro Connect SDK for iOS (Swift)](https://github.com/gopro/camera-swift-sdk)
